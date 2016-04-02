@@ -106,15 +106,19 @@ input {
 }
 
 input[type=url] {
-  display: inline
+  display: inline;
 }
 
 input[type=url]:focus {
   outline: none;
 }
 
+.shorten {
+  width: 75px;
+  display: inline;
+}
 
-.error {
+input.ng-invalid.ng-dirty, .error {
   border: red solid 4px;
   padding: 10px;
   margin: 0 10px;
