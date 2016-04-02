@@ -10,13 +10,8 @@
     
   <input type="text" name="filter" placeholder="filter" ng-model="filter" /> 
   <h4>All Links</h4>
-  <!-- <ul>
-    <li ng-repeat="link in data.links"> 
-    <a ng-href={{link.url}}>{{link.title}}</a></li>
-  </ul>
- -->
-  <!-- <ul> -->
-    <div class="link" ng-repeat="link in data.links">
+  
+  <div class="link" ng-repeat="link in data.links | orderBy: 'visits' : 'reverse'">
     <img src='../assets/redirect_icon.png'/>
     <div class="info">
       <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
@@ -25,23 +20,6 @@
         <a ng-href={{link.baseUrl}}/{{link.code}}>{{link.baseUrl}}/{{link.code}}</a>
       </div>
     </div>
-  <!-- </ul> -->
-
-
-<!-- 
-
-  <script id='link' type='text/x-handlebars-template'>
-  <img src='/redirect_icon.png'/>
-  <div class='info'>
-    <div class='visits'><span class='count'>{{visits}}</span>Visits</div>
-    <div class='title'>{{title}}</div>
-    <div class='original'>{{url}}</div>
-    <a href='{{baseUrl}}/{{code}}'>{{baseUrl}}/{{code}}</a>
   </div>
-</script> -->
-
-  <hr/>
-  <pre>
-  {{data.links}}
-  </pre>
+ 
 </div>
