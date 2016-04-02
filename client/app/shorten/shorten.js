@@ -1,27 +1,19 @@
 // var linkhelper = require('../../server/links/linkController.js')
 angular.module('shortly.shorten', [])
 
-.controller('ShortenController', function ($scope, $location, Links) {
-  // Your code here
+.controller('ShortenController', function ($scope, $location, Links, Auth) {
+
   $scope.link = {};
 
-  $scope.addLink = function(url) {
+  $scope.signout = function() {
+    Auth.signout();
+  };
 
-    console.log('LINK OBJ', url);
-    Links.addOne(url);
-    // $scope.link.url = '';
-    $location.path('/links');
+  $scope.addLink = function(urlObj) {
+    console.log('LINK OBJ', urlObj);
+    Links.addOne(urlObj).then(function() {
+      $location.path('/link');
+    });
   };
 
 });
-
-
-  // Link.addOne = function(url) {
-  //   return $http({
-  //     method: 'POST',
-  //     url: '/api/links',
-  //     data: newLinkObj
-  //   }).then(function(response) {
-  //     return response;
-  //   });
-  // };
