@@ -1,3 +1,13 @@
-<div id='container'>
+<div id='container' ng-controller="LinksController">
   <!-- Your html here -->
+  <h4>All Links</h4>
+  <ul>
+    <li ng-repeat="link in data.links"> 
+    <a ng-href={{link.url}}>{{link.title}}</a></li>
+  </ul>
+
+  <hr/>
+  <pre>
+  {{data.links}}
+  </pre>
 </div>
