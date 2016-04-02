@@ -8,10 +8,10 @@
     </ul>
   </div>
     
-  <input type="text" name="filter" placeholder="filter" ng-model="filter" /> 
+  <input type="text" class="filter" placeholder="filter" ng-model="filter" /> 
   <h4>All Links</h4>
   
-  <div class="link" ng-repeat="link in data.links | orderBy: 'visits' : 'reverse'">
+  <div class="link" ng-repeat="link in data.links | orderBy: 'visits' : 'reverse' | filter: filter ">
     <img src='../assets/redirect_icon.png'/>
     <div class="info">
       <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
