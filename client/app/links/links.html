@@ -11,7 +11,7 @@
   <input type="text" class="filter" placeholder="filter" ng-model="filter" /> 
   <h4>All Links</h4>
   
-  <div class="link" ng-repeat="link in data.links | orderBy: 'visits' : 'reverse' | filter: filter ">
+  <div class="link" ng-repeat="link in data.links | filter: filter | orderBy: 'visits' : 'reverse'">
     <img src='../assets/redirect_icon.png'/>
     <div class="info">
       <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
@@ -22,4 +22,13 @@
     </div>
   </div>
  
+  <div>
+  </div>
+ <hr />
+ <pre>
+<!--  {{data.links}}
+ {{ '12' | reverse:true }} -->
+<!-- {{data.links | reverse: true}} -->
+    <!-- {{ 'filter' | reverse}} -->
+ </pre>
 </div>
